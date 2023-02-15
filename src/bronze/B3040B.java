@@ -41,11 +41,8 @@ public class B3040B {
 		for(int i = 0; i < 9; i++)
 			arr[i] = Integer.parseInt(br.readLine());
 		
-		for(int i = 0; i < 3; i++)
-		{
-			flag = combination(arr, ret, 0, i, flag);
-			if(flag) break;
-		}
+		flag = combination(arr, ret, 0, 0, flag);
+
 		for(int i = 0; i < 7; i++)
 			sb.append(ret[i]).append("\n");
 		System.out.println(sb.toString());
