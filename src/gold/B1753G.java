@@ -36,7 +36,6 @@ public class B1753G {
 		int inf = Integer.MAX_VALUE;
 		List<Node> li[] = new ArrayList[v + 1];
 		int d[] = new int[v + 1];
-		boolean visit[] = new boolean[v + 1];
 		for(int i = 1; i <= v; i++)
 			li[i] = new ArrayList<>();
 		Arrays.fill(d, inf);
@@ -58,13 +57,12 @@ public class B1753G {
 		{
 			Node tmp = pq.poll();
 			int cur = tmp.to;
-			if(visit[cur]) continue;
-			visit[cur] = true;
+			if(tmp.d > d[cur]) continue;
 
 			for(int j = 0; j < li[cur].size(); j++)
 			{
 				int to = li[cur].get(j).to;
-				if(!visit[to] && li[cur].get(j).d + tmp.d < d[to])
+				if(li[cur].get(j).d + tmp.d < d[to])
 				{
 					d[to] = li[cur].get(j).d + tmp.d;
 					pq.offer(new Node(to, d[to]));
