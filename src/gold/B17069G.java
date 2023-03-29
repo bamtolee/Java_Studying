@@ -5,10 +5,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class B17070G {
+public class B17069G {
 
-	static int map[][] = new int[17][17];
-	static int dp[][][] = new int[17][17][3];
+	static long map[][] = new long[33][33];
+	static long dp[][][] = new long[33][33][3];
 	
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -17,7 +17,7 @@ public class B17070G {
 		{
 			StringTokenizer st = new StringTokenizer(br.readLine());
 			for(int j = 0; j < n; j++)
-				map[i][j] = Integer.parseInt(st.nextToken());
+				map[i][j] = Long.parseLong(st.nextToken());
 		}
 		
 		dp[0][1][0] = 1;
