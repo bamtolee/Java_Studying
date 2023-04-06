@@ -31,6 +31,7 @@ public class Solution_5607_D3 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
 		int t = Integer.parseInt(br.readLine());
+		factorial[0] = 1;
 		factorial[1] = 1;
 		for(int i = 2; i <= 1000000; i++)
 			factorial[i] = factorial[i - 1] * (long)i % mod;
